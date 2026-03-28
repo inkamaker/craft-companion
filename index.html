@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Craft Companion">
+<meta name="theme-color" content="#faf8f4">
+<title>Craft Companion</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF8mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDIgNzkuZGJhM2RhM2I1LCAyMDIzLzEyLzE1LTEwOjQyOjM3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjUuNCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjQtMDEtMDFUMDA6MDA6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQtMDEtMDFUMDA6MDA6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI0LTAxLTAxVDAwOjAwOjAwIj4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B">
+<!-- Fallback: inline SVG icon generated at runtime -->
+<script>
+(function(){
+  const s=document.createElement('canvas');s.width=s.height=180;
+  const c=s.getContext('2d');
+  // cream background with rounded corners
+  const r=36;c.beginPath();c.moveTo(r,0);c.lineTo(180-r,0);c.quadraticCurveTo(180,0,180,r);
+  c.lineTo(180,180-r);c.quadraticCurveTo(180,180,180-r,180);c.lineTo(r,180);
+  c.quadraticCurveTo(0,180,0,180-r);c.lineTo(0,r);c.quadraticCurveTo(0,0,r,0);
+  c.closePath();c.fillStyle='#faf8f4';c.fill();
+  // yarn ball body
+  const cx=90,cy=95,rad=52;
+  c.beginPath();c.arc(cx,cy,rad,0,Math.PI*2);c.fillStyle='#c0392b';c.fill();
+  c.beginPath();c.arc(cx,cy,rad,0,Math.PI*2);c.strokeStyle='#a93226';c.lineWidth=2;c.stroke();
+  // yarn strands
+  c.strokeStyle='rgba(255,255,255,0.35)';c.lineWidth=2.5;c.lineCap='round';
+  [[-30,-20,30,20],[20,-35,-20,35],[-15,30,15,-30],[35,10,-35,-10]].forEach(([x1,y1,x2,y2])=>{
+    c.beginPath();c.moveTo(cx+x1,cy+y1);c.bezierCurveTo(cx+x2*0.5,cy+y1*0.5,cx+x1*0.5,cy+y2*0.5,cx+x2,cy+y2);c.stroke();
+  });
+  // needle 1
+  c.save();c.translate(cx+28,cy-42);c.rotate(0.5);
+  c.fillStyle='#8B6914';c.beginPath();c.roundRect(-3,-28,6,52,3);c.fill();
+  c.fillStyle='#c0392b';c.beginPath();c.arc(0,-28,5,0,Math.PI*2);c.fill();
+  c.restore();
+  // needle 2
+  c.save();c.translate(cx-20,cy-48);c.rotate(-0.3);
+  c.fillStyle='#8B6914';c.beginPath();c.roundRect(-3,-28,6,52,3);c.fill();
+  c.fillStyle='#c0392b';c.beginPath();c.arc(0,-28,5,0,Math.PI*2);c.fill();
+  c.restore();
+  const link=document.querySelector('link[rel="apple-touch-icon"]');
+  if(link)link.href=s.toDataURL('image/png');
+})();
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@zxing/library@0.20.0/umd/index.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>
+:root {
+  --bg: #faf8f4;
+  --bg2: #f3efe8;
+  --bg3: #ebe4d8;
+  --card: #ffffff;
+  --border: #d8d0c4;
+  --border-light: #ece7de;
+  --text: #2c2118;
+  --text2: #6b5d4f;
+  --text3: #9c8e82;
+  --accent: #7c4f8a;
+  --accent2: #c17d3c;
+  --accent3: #4a8a6f;
+  --danger: #c0392b;
+  --shadow: 0 2px 12px rgba(44,33,24,0.08);
+  --shadow-lg: 0 8px 32px rgba(44,33,24,0.14);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  /* Safe area for phones with notches */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html, body { height: 100%; overflow: hidden; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  /* Prevent rubber-band scroll on iOS */
+  overscroll-behavior: none;
+}
+
+/* ── App Shell ── */
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh; /* dynamic viewport on mobile */
+  overflow: hidden;
+  padding-top: var(--safe-top);
+}
+
+header {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 54px;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-style: italic;
+}
+
+.header-actions { margin-left: auto; display: flex; gap: 6px; }
+
+/* ── Bottom Nav (phone-first) ── */
+nav {
+  display: flex;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  order: 3; /* push to bottom */
+  flex-shrink: 0;
+  padding-bottom: var(--safe-bottom);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px 4px 6px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  transition: color .15s;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 52px;
+  justify-content: center;
+}
+.tab-btn .tab-icon { font-size: 20px; line-height: 1; }
+.tab-btn:hover { color: var(--text2); }
+.tab-btn.active { color: var(--accent); }
+.tab-btn.active .tab-icon { transform: scale(1.1); }
+
+/* ── Main content ── */
+main {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px;
+  overscroll-behavior: contain;
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── Section header ── */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 21px;
+  color: var(--text);
+  font-style: italic;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all .15s;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:active { background: #6a4078; }
+.btn-secondary { background: var(--bg2); color: var(--text2); border: 1px solid var(--border); }
+.btn-secondary:active { background: var(--bg3); }
+.btn-danger { background: var(--danger); color: #fff; }
+.btn-ghost { background: none; color: var(--text3); border: 1px solid var(--border); }
+.btn-sm { padding: 6px 11px; font-size: 13px; }
+.btn-icon {
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  background: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  color: var(--text2);
+  transition: all .15s;
+  font-size: 16px;
+}
+.btn-icon:active { background: var(--bg2); }
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 500px) {
+  .card-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+}
+
+/* ── Forms ── */
+.form-group { margin-bottom: 14px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text2);
+  margin-bottom: 5px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px; /* 16px prevents iOS zoom on focus */
+  transition: border-color .15s;
+  outline: none;
+  -webkit-appearance: none;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+textarea { resize: vertical; min-height: 80px; }
+
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(44,33,24,0.55);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end; /* slide up from bottom on mobile */
+  justify-content: center;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--card);
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  max-width: 600px;
+  max-height: 92vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(100%);
+  transition: transform .28s cubic-bezier(.32,0,.67,0);
+  padding-bottom: var(--safe-bottom);
+}
+.modal-overlay.open .modal {
+  transform: translateY(0);
+  transition-timing-function: cubic-bezier(.33,1,.68,1);
+}
+
+/* drag handle on modal */
+.modal::before {
+  content: '';
+  display: block;
+  width: 40px; height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 10px auto 0;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  background: var(--card);
+  z-index: 1;
+}
+.modal-title { font-family: var(--font-display); font-size: 18px; font-style: italic; }
+.modal-body { padding: 16px 18px; }
+.modal-footer {
+  padding: 12px 18px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text3);
+  font-size: 22px;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* ── Toast ── */
+#toast {
+  position: fixed;
+  bottom: calc(70px + var(--safe-bottom));
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--text);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  z-index: 200;
+  opacity: 0;
+  transition: all .22s;
+  pointer-events: none;
+  white-space: nowrap;
+  max-width: 88vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ─── YARN STASH ─── */
+.yarn-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.yarn-swatch { width: 100%; height: 7px; }
+.yarn-card-inner { padding: 12px 14px 14px; }
+.yarn-name { font-weight: 600; font-size: 15px; margin-bottom: 1px; }
+.yarn-brand { font-size: 12px; color: var(--text3); margin-bottom: 8px; }
+.yarn-meta { display: flex; flex-wrap: wrap; gap: 5px; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: var(--bg2);
+  color: var(--text2);
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid var(--border-light);
+}
+.chip-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.yarn-linked { font-size: 11px; color: var(--text3); margin-top: 6px; font-style: italic; }
+.yarn-card-actions { display: flex; gap: 6px; margin-top: 10px; }
+
+/* ─── PROJECTS ─── */
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.project-img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.project-img-placeholder {
+  width: 100%; height: 140px;
+  background: linear-gradient(135deg, var(--bg2), var(--bg3));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 40px; color: var(--text3);
+}
+.project-img-wrap { position: relative; }
+.project-img-edit-btn {
+  position: absolute; bottom: 8px; right: 8px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  color: var(--text2);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.project-body { padding: 12px 14px; }
+.project-name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+.status-badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.status-Planning { background: #eef2ff; color: #4f46e5; }
+.status-Active { background: #ecfdf5; color: #059669; }
+.status-Complete { background: #fdf4ff; color: var(--accent); }
+.status-Paused { background: #fff7ed; color: #c2410c; }
+.project-yarns { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+.yarn-dot-label { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--text3); }
+.yarn-dot { width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--border); flex-shrink: 0; }
+.project-actions { display: flex; gap: 6px; padding: 0 14px 14px; }
+
+/* ─── GALLERY ─── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+@media (min-width: 400px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+.gallery-item { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 1; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-item-cap {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.55));
+  padding: 16px 8px 6px;
+  font-size: 11px; color: #fff;
+}
+
+/* ─── ROW COUNTER ─── */
+.counter-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 8px;
+}
+.counter-display {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px 40px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+.counter-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.counter-number {
+  font-family: var(--font-mono);
+  font-size: 80px;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 1;
+  transition: transform .1s;
+}
+.counter-number.bump { transform: scale(1.1); }
+.counter-of { font-size: 13px; color: var(--text3); margin-top: 6px; }
+.counter-lock-icon { position: absolute; top: 12px; right: 14px; font-size: 18px; }
+.counter-progress { width: 100%; height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; margin-top: 14px; }
+.counter-progress-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width .3s; }
+.counter-controls { display: flex; gap: 12px; align-items: center; }
+.counter-btn {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .1s;
+  box-shadow: var(--shadow);
+  -webkit-tap-highlight-color: transparent;
+}
+.counter-btn:active { transform: scale(0.9); }
+.counter-btn-dec { background: var(--bg2); color: var(--text); }
+.counter-btn-inc { background: var(--accent); color: #fff; }
+.counter-btn:disabled { opacity: 0.35; }
+.counter-meta { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.counter-note-box {
+  width: 100%;
+  max-width: 320px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--text2);
+  text-align: center;
+}
+
+/* ─── PATTERN ─── */
+.pattern-upload-area {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 36px 20px;
+  text-align: center;
+  background: var(--bg2);
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.pattern-upload-area:active { border-color: var(--accent); }
+
+.pattern-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  transition: background .12s;
+  cursor: pointer;
+}
+.pattern-row:active { background: var(--bg2); }
+.pattern-row.current { background: #f3eaf8; border-color: var(--accent); }
+.pattern-row-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text3);
+  min-width: 28px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+.pattern-row.current .pattern-row-num { color: var(--accent); font-weight: 500; }
+.pattern-row-text { flex: 1; font-size: 14px; line-height: 1.6; }
+.pattern-row-note { font-size: 11px; color: var(--accent2); margin-top: 2px; }
+.pattern-row-actions { flex-shrink: 0; }
+
+/* ─── NOTES ─── */
+.note-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+.note-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+.note-title { font-weight: 600; font-size: 14px; }
+.note-date { font-size: 11px; color: var(--text3); }
+.note-body { font-size: 13px; color: var(--text2); white-space: pre-wrap; line-height: 1.6; }
+.note-tag { display: inline-block; margin-top: 8px; padding: 2px 8px; background: var(--bg2); border-radius: 20px; font-size: 11px; color: var(--text3); }
+.note-actions { display: flex; gap: 5px; }
+
+/* ─── MISC ─── */
+.empty-state { text-align: center; padding: 48px 20px; color: var(--text3); }
+.empty-icon { font-size: 44px; margin-bottom: 10px; }
+.empty-state p { max-width: 240px; margin: 0 auto; font-size: 14px; line-height: 1.6; }
+
+.search-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+.search-wrap { position: relative; flex: 1; }
+.search-wrap input { padding-left: 34px; }
+.search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 15px; color: var(--text3); pointer-events: none; }
+
+.color-pick-row { display: flex; align-items: center; gap: 10px; }
+.color-preview { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border); flex-shrink: 0; }
+input[type="color"] { width: 48px; height: 36px; padding: 2px; cursor: pointer; border-radius: 6px; }
+
+.ai-loading { display: flex; gap: 5px; align-items: center; padding: 14px; }
+.ai-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: bounce .9s infinite; }
+.ai-dot:nth-child(2) { animation-delay: .18s; }
+.ai-dot:nth-child(3) { animation-delay: .36s; }
+@keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+#scanner-video { width: 100%; border-radius: 10px; }
+
+/* ── Yarn picker (replaces broken checkbox labels) ── */
+.yarn-pick-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background .12s, border-color .12s;
+  background: var(--bg);
+}
+.yarn-pick-item.yarn-pick-sel {
+  border-color: var(--accent);
+  background: #f5eef9;
+}
+.yarn-pick-check {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+  background: #fff;
+}
+.yarn-pick-sel .yarn-pick-check {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+.yarn-pick-name {
+  font-size: 13px;
+  color: var(--text2);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Last-visited indicator in header */
+.last-saved {
+  font-size: 11px;
+  color: var(--text3);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <span class="logo">🧶 Craft Companion</span>
+    <div class="header-actions">
+      <span class="last-saved" id="lastSaved"></span>
+      <button class="btn btn-secondary btn-sm" onclick="openExport()">⬇</button>
+    </div>
+  </header>
+
+  <main id="mainScroll">
+    <!-- YARN STASH -->
+    <div id="tab-stash" class="tab-panel active">
+      <div class="section-header">
+        <span class="section-title">Yarn Stash</span>
+        <div style="display:flex;gap:6px;">
+          <button class="btn btn-secondary btn-sm" onclick="openScanner()">📷</button>
+          <button class="btn btn-primary btn-sm" onclick="openYarnModal()">+ Add</button>
+        </div>
+      </div>
+      <div class="search-row">
+        <div class="search-wrap"><span class="search-icon">🔍</span><input type="text" id="stashSearch" placeholder="Search yarn…" oninput="renderStash()"></div>
+      </div>
+      <div id="stashGrid" class="card-grid"></div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div id="tab-projects" class="tab-panel">
+      <div class="section-header">
+        <span class="section-title">Projects</span>
+        <button class="btn btn-primary btn-sm" onclick="openProjectModal()">+ New</button>
+      </div>
+      <div class="search-row">
+        <div class="search-wrap"><span class="search-icon">🔍</span><input type="text" id="projSearch" placeholder="Search projects…" oninput="renderProjects()"></div>
+      </div>
+      <div id="projectGrid" class="card-grid"></div>
+    </div>
+
+    <!-- GALLERY -->
+    <div id="tab-gallery" class="tab-panel">
+      <div class="section-header">
+        <span class="section-title">Gallery</span>
+        <button class="btn btn-primary btn-sm" onclick="document.getElementById('galleryUpload').click()">+ Photo</button>
+        <input type="file" id="galleryUpload" accept="image/*" multiple style="display:none" onchange="addGalleryPhotos(event)">
+      </div>
+      <div id="galleryGrid" class="gallery-grid"></div>
+    </div>
+
+    <!-- ROW COUNTER -->
+    <div id="tab-counter" class="tab-panel">
+      <div class="section-header"><span class="section-title">Row Counter</span></div>
+      <div class="counter-wrap">
+        <div class="counter-display">
+          <div class="counter-label">Current Row</div>
+          <div class="counter-number" id="counterNum">0</div>
+          <div class="counter-of" id="counterOf"></div>
+          <div class="counter-lock-icon" id="counterLockIcon"></div>
+          <div class="counter-progress" id="counterProgress" style="display:none">
+            <div class="counter-progress-fill" id="counterFill"></div>
+          </div>
+        </div>
+        <div class="counter-controls">
+          <button class="counter-btn counter-btn-dec" id="btnDec" onclick="counterDec()">−</button>
+          <button class="counter-btn counter-btn-inc" id="btnInc" onclick="counterInc()">+</button>
+        </div>
+        <div class="counter-meta">
+          <button class="btn btn-secondary btn-sm" onclick="toggleLock()">🔐 Lock</button>
+          <button class="btn btn-secondary btn-sm" onclick="openCounterSet()">⚙ Set Goal</button>
+          <button class="btn btn-ghost btn-sm" onclick="resetCounter()">↺ Reset</button>
+        </div>
+        <div id="counterNoteBox"></div>
+      </div>
+    </div>
+
+    <!-- PATTERN -->
+    <div id="tab-pattern" class="tab-panel">
+      <div class="section-header">
+        <span class="section-title">Pattern</span>
+        <div style="display:flex;gap:6px;">
+          <button class="btn btn-secondary btn-sm" onclick="document.getElementById('pdfUpload').click()">📎 PDF</button>
+          <input type="file" id="pdfUpload" accept=".pdf" style="display:none" onchange="loadPatternPDF(event)">
+          <button class="btn btn-secondary btn-sm" onclick="openModal('patternTextModal')">✏ Text</button>
+          <button class="btn btn-ghost btn-sm" onclick="clearPattern()">🗑</button>
+        </div>
+      </div>
+      <div id="patternApiHint" style="background:#fff8e8;border:1px solid #f0d090;border-radius:10px;padding:12px 14px;font-size:13px;color:#7a5c1a;margin-bottom:14px;line-height:1.5;">
+        <strong>📎 PDF parsing uses AI</strong> — you need a free Anthropic API key.<br>
+        <span style="font-size:12px;color:#9a7530;">Get one at <strong>console.anthropic.com</strong> → API Keys → Create key</span><br>
+        <button class="btn btn-primary btn-sm" style="margin-top:8px;" onclick="openApiKeyModal()">Enter API Key</button>
+        <span id="apiKeyStatus" style="margin-left:8px;font-size:12px;color:#4a8a6f;"></span>
+      </div>
+      <div id="patternRows"></div>
+    </div>
+
+    <!-- NOTES -->
+    <div id="tab-notes" class="tab-panel">
+      <div class="section-header">
+        <span class="section-title">Notes</span>
+        <button class="btn btn-primary btn-sm" onclick="openNoteModal()">+ Note</button>
+      </div>
+      <div id="notesGrid" class="card-grid"></div>
+    </div>
+  </main>
+
+  <!-- Bottom Navigation -->
+  <nav>
+    <button class="tab-btn active" onclick="switchTab('stash',this)">
+      <span class="tab-icon">🧶</span>Stash
+    </button>
+    <button class="tab-btn" onclick="switchTab('projects',this)">
+      <span class="tab-icon">📌</span>Projects
+    </button>
+    <button class="tab-btn" onclick="switchTab('gallery',this)">
+      <span class="tab-icon">🖼</span>Gallery
+    </button>
+    <button class="tab-btn" onclick="switchTab('counter',this)">
+      <span class="tab-icon">🔢</span>Counter
+    </button>
+    <button class="tab-btn" onclick="switchTab('pattern',this)">
+      <span class="tab-icon">📄</span>Pattern
+    </button>
+    <button class="tab-btn" onclick="switchTab('notes',this)">
+      <span class="tab-icon">📝</span>Notes
+    </button>
+  </nav>
+</div>
+
+<div id="toast"></div>
+
+<!-- ═══ MODALS ═══ -->
+
+<!-- Yarn -->
+<div class="modal-overlay" id="yarnModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title" id="yarnModalTitle">Add Yarn</span>
+      <button class="modal-close" onclick="closeModal('yarnModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row">
+        <div class="form-group"><label>Name *</label><input id="yarnName" placeholder="e.g. Merino DK"></div>
+        <div class="form-group"><label>Brand</label><input id="yarnBrand" placeholder="e.g. Drops"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Weight</label>
+          <select id="yarnWeight">
+            <option value="">—</option>
+            <option>Lace</option><option>Super Fine</option><option>Fine</option>
+            <option>Light DK</option><option>DK</option><option>Worsted</option>
+            <option>Aran</option><option>Bulky</option><option>Super Bulky</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Fiber</label><input id="yarnFiber" placeholder="e.g. 100% Merino"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Skeins</label><input id="yarnSkeins" type="number" min="0" step="0.5" placeholder="3"></div>
+        <div class="form-group"><label>Yards/Skein</label><input id="yarnYards" type="number" min="0" placeholder="230"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Colorway</label><input id="yarnColorway" placeholder="e.g. Midnight"></div>
+        <div class="form-group"><label>Dye Lot</label><input id="yarnDyeLot" placeholder="e.g. A2387"></div>
+      </div>
+      <div class="form-group">
+        <label>Swatch Color</label>
+        <div class="color-pick-row">
+          <div class="color-preview" id="colorPreview"></div>
+          <input type="color" id="yarnColor" value="#7c8c6a" oninput="updateColorPreview()">
+          <span style="font-size:12px;color:var(--text3)">Pick closest color</span>
+        </div>
+      </div>
+      <div class="form-group"><label>Notes</label><textarea id="yarnNotes" placeholder="Needle size, care…"></textarea></div>
+      <div class="form-group">
+        <label>Barcode</label>
+        <div id="barcodeDisplay" style="font-family:var(--font-mono);font-size:11px;color:var(--text3);margin-bottom:4px;">None scanned</div>
+        <input id="yarnBarcode" placeholder="Or type UPC manually">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('yarnModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveYarn()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Project -->
+<div class="modal-overlay" id="projectModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title" id="projModalTitle">New Project</span>
+      <button class="modal-close" onclick="closeModal('projectModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row">
+        <div class="form-group"><label>Name *</label><input id="projName" placeholder="e.g. Winter Sweater"></div>
+        <div class="form-group">
+          <label>Type</label>
+          <select id="projType">
+            <option>Sweater</option><option>Cardigan</option><option>Hat</option>
+            <option>Socks</option><option>Shawl</option><option>Scarf</option>
+            <option>Blanket</option><option>Amigurumi</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Status</label>
+          <select id="projStatus"><option>Planning</option><option>Active</option><option>Paused</option><option>Complete</option></select>
+        </div>
+        <div class="form-group"><label>Needle / Hook</label><input id="projNeedle" placeholder="e.g. 4mm"></div>
+      </div>
+      <div class="form-group">
+        <label>Link Yarns from Stash</label>
+        <div id="yarnLinkList" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;"></div>
+      </div>
+      <div class="form-group"><label>Notes</label><textarea id="projNotes" placeholder="Pattern source, sizing…"></textarea></div>
+      <div class="form-group">
+        <label>Cover Photo</label>
+        <input type="file" id="projImage" accept="image/*" onchange="previewProjImage(event)">
+        <img id="projImagePreview" src="" alt="" style="margin-top:8px;max-height:130px;border-radius:8px;display:none;object-fit:cover;width:100%">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('projectModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveProject()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Project image update -->
+<div class="modal-overlay" id="projImgModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Update Cover Photo</span>
+      <button class="modal-close" onclick="closeModal('projImgModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>New Photo</label>
+        <input type="file" id="projImgUpdate" accept="image/*" onchange="previewProjImgUpdate(event)">
+        <img id="projImgUpdatePreview" src="" alt="" style="margin-top:8px;max-height:140px;border-radius:8px;display:none;object-fit:cover;width:100%">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('projImgModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="applyProjImgUpdate()">Update</button>
+    </div>
+  </div>
+</div>
+
+<!-- Counter Set -->
+<div class="modal-overlay" id="counterModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Counter Settings</span>
+      <button class="modal-close" onclick="closeModal('counterModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group"><label>Current Row</label><input id="counterSetRow" type="number" min="0"></div>
+      <div class="form-group"><label>Goal (total rows)</label><input id="counterSetGoal" type="number" min="0" placeholder="Leave blank for none"></div>
+      <div class="form-group"><label>Reminder Note</label><textarea id="counterSetNote" placeholder="e.g. Repeat rows 3–8 for pattern"></textarea></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('counterModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="applyCounterSet()">Apply</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pattern Text -->
+<div class="modal-overlay" id="patternTextModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Enter Pattern Text</span>
+      <button class="modal-close" onclick="closeModal('patternTextModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>One row per line</label>
+        <textarea id="patternTextInput" placeholder="Row 1: Cast on 80 sts.&#10;Row 2: *K2, P2* repeat.&#10;…" style="min-height:200px;font-family:var(--font-mono);font-size:13px;"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('patternTextModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="loadPatternText()">Load</button>
+    </div>
+  </div>
+</div>
+
+<!-- Row Note -->
+<div class="modal-overlay" id="rowNoteModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title" id="rowNoteTitle">Row Note</span>
+      <button class="modal-close" onclick="closeModal('rowNoteModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Reminder for this row</label>
+        <textarea id="rowNoteText" placeholder="e.g. Switch to contrast colour here"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('rowNoteModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveRowNote()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Note -->
+<div class="modal-overlay" id="noteModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title" id="noteModalTitle">New Note</span>
+      <button class="modal-close" onclick="closeModal('noteModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group"><label>Title</label><input id="noteTitle" placeholder="Quick note…"></div>
+      <div class="form-group"><label>Note</label><textarea id="noteBody" placeholder="Write anything…" style="min-height:120px;"></textarea></div>
+      <div class="form-group"><label>Link to Project</label><select id="noteProject"><option value="">— None —</option></select></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('noteModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveNote()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- API Key -->
+<div class="modal-overlay" id="apiKeyModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Anthropic API Key</span>
+      <button class="modal-close" onclick="closeModal('apiKeyModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="background:var(--bg2);border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:13px;line-height:1.6;color:var(--text2);">
+        <strong>How to get a free API key:</strong><br>
+        1. Open Safari and go to <strong>console.anthropic.com</strong><br>
+        2. Sign up or log in (free)<br>
+        3. Tap <strong>API Keys</strong> in the menu<br>
+        4. Tap <strong>Create Key</strong>, copy it<br>
+        5. Paste it below and tap Save<br>
+        <br>
+        <span style="font-size:11px;color:var(--text3);">🔒 Stored only on your phone. Never sent anywhere except Anthropic.</span>
+      </div>
+      <div class="form-group">
+        <label>Paste your API Key</label>
+        <input id="apiKeyInput" type="password" placeholder="sk-ant-api03-…" autocomplete="off" autocorrect="off" spellcheck="false">
+      </div>
+      <div id="currentKeyStatus" style="font-size:12px;color:var(--text3);margin-top:-8px;margin-bottom:4px;"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('apiKeyModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveApiKey()">Save Key</button>
+    </div>
+  </div>
+</div>
+
+<!-- Scanner -->
+<div class="modal-overlay" id="scannerModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Scan Barcode</span>
+      <button class="modal-close" onclick="closeScanner()">✕</button>
+    </div>
+    <div class="modal-body">
+      <video id="scanner-video" autoplay playsinline style="display:none;width:100%;border-radius:10px;max-height:55vh;"></video>
+      <div id="scannerStatus" style="text-align:center;padding:14px;color:var(--text3);font-size:13px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Gallery Lightbox -->
+<div class="modal-overlay" id="lightboxModal">
+  <div class="modal" style="border-radius:20px 20px 0 0;background:#111;">
+    <div class="modal-header" style="background:#111;border-color:#333;">
+      <span class="modal-title" id="lightboxCaption" style="color:#fff;font-size:14px;"></span>
+      <button class="modal-close" style="color:#999;" onclick="closeModal('lightboxModal')">✕</button>
+    </div>
+    <div style="padding:0 16px 16px;">
+      <img id="lightboxImg" src="" alt="" style="width:100%;border-radius:10px;max-height:60vh;object-fit:contain;display:block;">
+      <div style="display:flex;gap:8px;margin-top:12px;justify-content:center;">
+        <button class="btn btn-danger" onclick="deleteGalleryItem()">🗑 Delete</button>
+        <button class="btn btn-secondary" onclick="closeModal('lightboxModal')">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Import confirmation (hidden file input) -->
+<input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  STATE & PERSISTENCE
+// ═══════════════════════════════════════════════════════
+const STORAGE_KEY = 'craft-v4';
+
+let state = {
+  activeTab: 'stash',
+  scrollPositions: {},
+  yarns: [],
+  projects: [],
+  gallery: [],
+  counter: { row: 0, goal: null, locked: false, note: '' },
+  pattern: { rows: [], currentRow: 0, rowNotes: {} },
+  notes: [],
+  apiKey: '',
+  lastSaved: null,
+};
+
+function save() {
+  state.lastSaved = Date.now();
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    updateLastSavedDisplay();
+  } catch(e) {
+    toast('⚠️ Storage full — try exporting to free space');
+  }
+}
+
+function load() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) state = { ...state, ...JSON.parse(raw) };
+  } catch(e) { console.warn('Load error', e); }
+}
+
+function updateLastSavedDisplay() {
+  const el = document.getElementById('lastSaved');
+  if (!state.lastSaved) { el.textContent = ''; return; }
+  const mins = Math.floor((Date.now() - state.lastSaved) / 60000);
+  el.textContent = mins < 1 ? '✓ saved' : `✓ ${mins}m ago`;
+}
+
+// ═══════════════════════════════════════════════════════
+//  INIT — restore last tab & scroll position
+// ═══════════════════════════════════════════════════════
+load();
+
+// Restore active tab
+const tabButtons = document.querySelectorAll('.tab-btn');
+const savedTab = state.activeTab || 'stash';
+tabButtons.forEach(btn => {
+  const tabName = btn.getAttribute('onclick').match(/'(\w+)'/)[1];
+  if (tabName === savedTab) {
+    btn.classList.add('active');
+  } else {
+    btn.classList.remove('active');
+  }
+});
+document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+const activePanel = document.getElementById('tab-' + savedTab);
+if (activePanel) activePanel.classList.add('active');
+
+renderAll();
+updateLastSavedDisplay();
+updateApiKeyStatus();
+setInterval(updateLastSavedDisplay, 60000);
+
+// Save scroll position when scrolling, restore when switching tabs
+const mainScroll = document.getElementById('mainScroll');
+mainScroll.addEventListener('scroll', () => {
+  state.scrollPositions[state.activeTab] = mainScroll.scrollTop;
+  // debounce save
+  clearTimeout(mainScroll._scrollTimer);
+  mainScroll._scrollTimer = setTimeout(save, 800);
+}, { passive: true });
+
+function restoreScroll(tabName) {
+  const pos = (state.scrollPositions || {})[tabName] || 0;
+  setTimeout(() => { mainScroll.scrollTop = pos; }, 50);
+}
+
+// ═══════════════════════════════════════════════════════
+//  TABS
+// ═══════════════════════════════════════════════════════
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+  state.activeTab = name;
+  save();
+  restoreScroll(name);
+  if (name === 'counter') renderCounter();
+}
+
+// ═══════════════════════════════════════════════════════
+//  MODALS
+// ═══════════════════════════════════════════════════════
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+// Close on backdrop tap
+document.querySelectorAll('.modal-overlay').forEach(el => {
+  el.addEventListener('click', e => { if (e.target === el) closeModal(el.id); });
+});
+
+// ═══════════════════════════════════════════════════════
+//  TOAST
+// ═══════════════════════════════════════════════════════
+let _toastTimer;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(() => el.classList.remove('show'), 2600);
+}
+
+// ═══════════════════════════════════════════════════════
+//  UTILS
+// ═══════════════════════════════════════════════════════
+function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
+function esc(s) {
+  return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : '';
+}
+function readFile(file) {
+  return new Promise(res => { const r = new FileReader(); r.onload = e => res(e.target.result); r.readAsDataURL(file); });
+}
+
+function renderAll() {
+  renderStash(); renderProjects(); renderGallery();
+  renderCounter(); renderPattern(); renderNotes();
+}
+
+// ═══════════════════════════════════════════════════════
+//  YARN STASH
+// ═══════════════════════════════════════════════════════
+let _editYarnId = null;
+
+function openYarnModal(id) {
+  _editYarnId = id || null;
+  document.getElementById('yarnModalTitle').textContent = id ? 'Edit Yarn' : 'Add Yarn';
+  if (id) {
+    const y = state.yarns.find(x => x.id === id); if (!y) return;
+    document.getElementById('yarnName').value = y.name || '';
+    document.getElementById('yarnBrand').value = y.brand || '';
+    document.getElementById('yarnWeight').value = y.weight || '';
+    document.getElementById('yarnFiber').value = y.fiber || '';
+    document.getElementById('yarnSkeins').value = y.skeins || '';
+    document.getElementById('yarnYards').value = y.yards || '';
+    document.getElementById('yarnColorway').value = y.colorway || '';
+    document.getElementById('yarnDyeLot').value = y.dyeLot || '';
+    document.getElementById('yarnColor').value = y.color || '#7c8c6a';
+    document.getElementById('yarnNotes').value = y.notes || '';
+    document.getElementById('yarnBarcode').value = y.barcode || '';
+    document.getElementById('barcodeDisplay').textContent = y.barcode || 'None scanned';
+  } else {
+    ['yarnName','yarnBrand','yarnFiber','yarnColorway','yarnDyeLot','yarnNotes','yarnBarcode'].forEach(f => document.getElementById(f).value = '');
+    document.getElementById('yarnWeight').value = '';
+    document.getElementById('yarnSkeins').value = '';
+    document.getElementById('yarnYards').value = '';
+    document.getElementById('yarnColor').value = '#7c8c6a';
+    document.getElementById('barcodeDisplay').textContent = 'None scanned';
+  }
+  updateColorPreview();
+  openModal('yarnModal');
+}
+
+function updateColorPreview() {
+  document.getElementById('colorPreview').style.background = document.getElementById('yarnColor').value;
+}
+updateColorPreview();
+
+function saveYarn() {
+  const name = document.getElementById('yarnName').value.trim();
+  if (!name) { toast('Yarn name is required'); return; }
+  const data = {
+    name, brand: document.getElementById('yarnBrand').value.trim(),
+    weight: document.getElementById('yarnWeight').value,
+    fiber: document.getElementById('yarnFiber').value.trim(),
+    skeins: parseFloat(document.getElementById('yarnSkeins').value)||0,
+    yards: parseInt(document.getElementById('yarnYards').value)||0,
+    colorway: document.getElementById('yarnColorway').value.trim(),
+    dyeLot: document.getElementById('yarnDyeLot').value.trim(),
+    color: document.getElementById('yarnColor').value,
+    notes: document.getElementById('yarnNotes').value.trim(),
+    barcode: document.getElementById('yarnBarcode').value.trim(),
+  };
+  if (_editYarnId) {
+    const idx = state.yarns.findIndex(x => x.id === _editYarnId);
+    if (idx !== -1) state.yarns[idx] = { ...state.yarns[idx], ...data };
+    toast('Yarn updated ✓');
+  } else {
+    state.yarns.push({ id: uid(), ...data, addedAt: Date.now() });
+    toast('Yarn added ✓');
+  }
+  save(); closeModal('yarnModal'); renderStash(); renderProjects();
+}
+
+function deleteYarn(id) {
+  if (!confirm('Remove this yarn from your stash?')) return;
+  state.yarns = state.yarns.filter(y => y.id !== id);
+  state.projects.forEach(p => { if (p.yarnIds) p.yarnIds = p.yarnIds.filter(i => i !== id); });
+  save(); renderStash(); renderProjects(); toast('Yarn removed');
+}
+
+function renderStash() {
+  const q = (document.getElementById('stashSearch')?.value || '').toLowerCase();
+  const grid = document.getElementById('stashGrid');
+  const yarns = state.yarns.filter(y =>
+    !q || y.name.toLowerCase().includes(q) || (y.brand||'').toLowerCase().includes(q) || (y.colorway||'').toLowerCase().includes(q)
+  );
+  if (!yarns.length) {
+    grid.innerHTML = `<div class="empty-state"><div class="empty-icon">🧶</div><p>${state.yarns.length ? 'No yarns match your search.' : 'Your stash is empty! Tap + Add to get started.'}</p></div>`;
+    return;
+  }
+  grid.innerHTML = yarns.map(y => {
+    const linked = state.projects.filter(p => (p.yarnIds||[]).includes(y.id));
+    return `<div class="yarn-card">
+      <div class="yarn-swatch" style="background:${esc(y.color||'#ccc')}"></div>
+      <div class="yarn-card-inner">
+        <div class="yarn-name">${esc(y.name)}</div>
+        <div class="yarn-brand">${esc(y.brand||'')}</div>
+        <div class="yarn-meta">
+          ${y.weight?`<span class="chip">⚖ ${esc(y.weight)}</span>`:''}
+          ${y.fiber?`<span class="chip">🌿 ${esc(y.fiber)}</span>`:''}
+          ${y.skeins?`<span class="chip">📦 ${y.skeins} sk</span>`:''}
+          ${y.yards?`<span class="chip">📏 ${y.yards}y</span>`:''}
+          ${y.colorway?`<span class="chip"><span class="chip-dot" style="background:${esc(y.color||'#ccc')}"></span>${esc(y.colorway)}</span>`:''}
+          ${y.dyeLot?`<span class="chip">🎨 Lot ${esc(y.dyeLot)}</span>`:''}
+        </div>
+        ${y.notes?`<div style="font-size:12px;color:var(--text3);margin-top:6px;">${esc(y.notes)}</div>`:''}
+        ${linked.length?`<div class="yarn-linked">Used in: ${linked.map(p=>esc(p.name)).join(', ')}</div>`:''}
+        <div class="yarn-card-actions">
+          <button class="btn btn-secondary btn-sm" onclick="openYarnModal('${y.id}')">✏ Edit</button>
+          <button class="btn btn-ghost btn-sm" onclick="deleteYarn('${y.id}')">🗑</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  PROJECTS
+// ═══════════════════════════════════════════════════════
+let _editProjId = null;
+let _projImgData = null;
+let _updateProjImgId = null;
+let _updateProjImgData = null;
+
+function openProjectModal(id) {
+  _editProjId = id || null;
+  _projImgData = null;
+  document.getElementById('projModalTitle').textContent = id ? 'Edit Project' : 'New Project';
+  document.getElementById('projImagePreview').style.display = 'none';
+  document.getElementById('projImage').value = '';
+
+  // Build yarn picker — uses div+onclick instead of checkbox+label
+  // to avoid global CSS width:100% / text-transform rules breaking layout
+  const ll = document.getElementById('yarnLinkList');
+  const selectedIds = id ? (state.projects.find(x=>x.id===id)||{}).yarnIds||[] : [];
+  if (!state.yarns.length) {
+    ll.innerHTML = '<span style="font-size:13px;color:var(--text3)">No yarns in stash yet</span>';
+  } else {
+    ll.innerHTML = state.yarns.map(y => {
+      const sel = selectedIds.includes(y.id);
+      return `<div class="yarn-pick-item${sel?' yarn-pick-sel':''}" id="ypick-${y.id}" onclick="toggleYarnPick('${y.id}')">
+        <span class="yarn-pick-check">${sel?'✓':''}</span>
+        <span style="width:11px;height:11px;border-radius:50%;background:${y.color||'#ccc'};display:inline-block;flex-shrink:0;border:1px solid rgba(0,0,0,0.12);"></span>
+        <span class="yarn-pick-name">${esc(y.name)}${y.colorway?' ('+esc(y.colorway)+')':''}</span>
+      </div>`;
+    }).join('');
+  }
+
+  if (id) {
+    const p = state.projects.find(x => x.id === id); if (!p) return;
+    document.getElementById('projName').value = p.name || '';
+    document.getElementById('projType').value = p.type || 'Sweater';
+    document.getElementById('projStatus').value = p.status || 'Planning';
+    document.getElementById('projNeedle').value = p.needle || '';
+    document.getElementById('projNotes').value = p.notes || '';
+    if (p.image) { _projImgData = p.image; document.getElementById('projImagePreview').src = p.image; document.getElementById('projImagePreview').style.display = 'block'; }
+  } else {
+    ['projName','projNeedle','projNotes'].forEach(f => document.getElementById(f).value = '');
+    document.getElementById('projType').value = 'Sweater';
+    document.getElementById('projStatus').value = 'Planning';
+  }
+  openModal('projectModal');
+}
+
+async function previewProjImage(e) {
+  const f = e.target.files[0]; if (!f) return;
+  _projImgData = await readFile(f);
+  const img = document.getElementById('projImagePreview');
+  img.src = _projImgData; img.style.display = 'block';
+}
+
+function toggleYarnPick(yarnId) {
+  const el = document.getElementById('ypick-' + yarnId);
+  if (!el) return;
+  const sel = el.classList.toggle('yarn-pick-sel');
+  el.querySelector('.yarn-pick-check').textContent = sel ? '✓' : '';
+}
+
+function saveProject() {
+  const name = document.getElementById('projName').value.trim();
+  if (!name) { toast('Project name is required'); return; }
+  const yarnIds = [...document.querySelectorAll('.yarn-pick-sel')].map(el => el.id.replace('ypick-',''));
+  const data = {
+    name, type: document.getElementById('projType').value,
+    status: document.getElementById('projStatus').value,
+    needle: document.getElementById('projNeedle').value.trim(),
+    notes: document.getElementById('projNotes').value.trim(),
+    yarnIds,
+  };
+  if (_projImgData) data.image = _projImgData;
+  if (_editProjId) {
+    const idx = state.projects.findIndex(x => x.id === _editProjId);
+    if (idx !== -1) state.projects[idx] = { ...state.projects[idx], ...data };
+    toast('Project updated ✓');
+  } else {
+    state.projects.push({ id: uid(), ...data, createdAt: Date.now() });
+    toast('Project created ✓');
+  }
+  save(); closeModal('projectModal'); renderProjects();
+}
+
+function deleteProject(id) {
+  if (!confirm('Delete this project?')) return;
+  state.projects = state.projects.filter(p => p.id !== id);
+  save(); renderProjects(); toast('Project deleted');
+}
+
+function openProjImgUpdate(id) {
+  _updateProjImgId = id; _updateProjImgData = null;
+  document.getElementById('projImgUpdate').value = '';
+  document.getElementById('projImgUpdatePreview').style.display = 'none';
+  openModal('projImgModal');
+}
+async function previewProjImgUpdate(e) {
+  const f = e.target.files[0]; if (!f) return;
+  _updateProjImgData = await readFile(f);
+  const img = document.getElementById('projImgUpdatePreview');
+  img.src = _updateProjImgData; img.style.display = 'block';
+}
+function applyProjImgUpdate() {
+  if (!_updateProjImgData) { toast('Choose a photo first'); return; }
+  const p = state.projects.find(x => x.id === _updateProjImgId); if (!p) return;
+  p.image = _updateProjImgData;
+  save(); renderProjects(); closeModal('projImgModal'); toast('Cover photo updated ✓');
+}
+
+function renderProjects() {
+  const q = (document.getElementById('projSearch')?.value || '').toLowerCase();
+  const grid = document.getElementById('projectGrid');
+  const projs = state.projects.filter(p => !q || p.name.toLowerCase().includes(q));
+  if (!projs.length) {
+    grid.innerHTML = `<div class="empty-state"><div class="empty-icon">📌</div><p>${state.projects.length ? 'No matching projects.' : 'Start your first project!'}</p></div>`;
+    return;
+  }
+  grid.innerHTML = projs.map(p => {
+    const yarns = (p.yarnIds||[]).map(id => state.yarns.find(y => y.id === id)).filter(Boolean);
+    return `<div class="project-card">
+      <div class="project-img-wrap">
+        ${p.image
+          ? `<img class="project-img" src="${p.image}" alt="${esc(p.name)}">`
+          : `<div class="project-img-placeholder">🪡</div>`}
+        <button class="project-img-edit-btn" onclick="openProjImgUpdate('${p.id}')">📷 Update</button>
+      </div>
+      <div class="project-body">
+        <div class="project-name">${esc(p.name)}</div>
+        <span class="status-badge status-${esc(p.status)}">${esc(p.status)}</span>
+        <div style="font-size:12px;color:var(--text3);">${p.type?esc(p.type):''}${p.needle?' · '+esc(p.needle):''}</div>
+        ${yarns.length?`<div class="project-yarns">${yarns.map(y=>`
+          <div class="yarn-dot-label" title="${esc(y.name)} ${y.colorway?'('+esc(y.colorway)+')':''} ${y.dyeLot?'Lot:'+y.dyeLot:''}">
+            <div class="yarn-dot" style="background:${y.color||'#ccc'}"></div>
+            ${esc(y.colorway||y.name)}
+          </div>`).join('')}</div>`:''}
+        ${p.notes?`<div style="font-size:12px;color:var(--text2);margin-top:6px;">${esc(p.notes)}</div>`:''}
+      </div>
+      <div class="project-actions">
+        <button class="btn btn-secondary btn-sm" onclick="openProjectModal('${p.id}')">✏ Edit</button>
+        <button class="btn btn-ghost btn-sm" onclick="deleteProject('${p.id}')">🗑</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  GALLERY
+// ═══════════════════════════════════════════════════════
+let _lightboxIdx = null;
+
+async function addGalleryPhotos(e) {
+  for (const f of e.target.files) {
+    const data = await readFile(f);
+    state.gallery.push({ id: uid(), data, name: f.name, addedAt: Date.now() });
+  }
+  save(); renderGallery(); toast(`Added ${e.target.files.length} photo(s) ✓`);
+  e.target.value = '';
+}
+
+function renderGallery() {
+  const grid = document.getElementById('galleryGrid');
+  if (!state.gallery.length) {
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">🖼</div><p>Add photos of your WIPs and finished pieces.</p></div>`;
+    return;
+  }
+  grid.innerHTML = state.gallery.map((g,i) => `
+    <div class="gallery-item" onclick="openLightbox(${i})">
+      <img src="${g.data}" alt="${esc(g.name||'')}">
+      <div class="gallery-item-cap">${esc(g.name||'')}</div>
+    </div>`).join('');
+}
+
+function openLightbox(idx) {
+  _lightboxIdx = idx; const g = state.gallery[idx];
+  document.getElementById('lightboxImg').src = g.data;
+  document.getElementById('lightboxCaption').textContent = g.name || '';
+  openModal('lightboxModal');
+}
+function deleteGalleryItem() {
+  if (_lightboxIdx === null) return;
+  if (!confirm('Delete this photo?')) return;
+  state.gallery.splice(_lightboxIdx, 1);
+  save(); renderGallery(); closeModal('lightboxModal'); toast('Photo deleted');
+}
+
+// ═══════════════════════════════════════════════════════
+//  ROW COUNTER
+// ═══════════════════════════════════════════════════════
+function renderCounter() {
+  const c = state.counter;
+  document.getElementById('counterNum').textContent = c.row;
+  document.getElementById('counterLockIcon').textContent = c.locked ? '🔒' : '';
+  document.getElementById('btnInc').disabled = c.locked;
+  document.getElementById('btnDec').disabled = c.locked || c.row === 0;
+  const ofEl = document.getElementById('counterOf');
+  const prog = document.getElementById('counterProgress');
+  const fill = document.getElementById('counterFill');
+  if (c.goal) {
+    ofEl.textContent = `of ${c.goal} rows`;
+    prog.style.display = 'block';
+    fill.style.width = Math.min(100, Math.round(c.row/c.goal*100)) + '%';
+  } else {
+    ofEl.textContent = ''; prog.style.display = 'none';
+  }
+  document.getElementById('counterNoteBox').innerHTML = c.note
+    ? `<div class="counter-note-box">📌 ${esc(c.note)}</div>` : '';
+}
+
+function counterInc() {
+  if (state.counter.locked) return;
+  state.counter.row++;
+  const el = document.getElementById('counterNum');
+  el.classList.add('bump'); setTimeout(() => el.classList.remove('bump'), 120);
+  save(); renderCounter();
+}
+function counterDec() {
+  if (state.counter.locked || state.counter.row === 0) return;
+  state.counter.row--; save(); renderCounter();
+}
+function toggleLock() {
+  state.counter.locked = !state.counter.locked;
+  save(); renderCounter();
+  toast(state.counter.locked ? '🔒 Counter locked' : '🔓 Counter unlocked');
+}
+function resetCounter() {
+  if (!confirm('Reset counter to 0?')) return;
+  state.counter.row = 0; save(); renderCounter();
+}
+function openCounterSet() {
+  document.getElementById('counterSetRow').value = state.counter.row;
+  document.getElementById('counterSetGoal').value = state.counter.goal || '';
+  document.getElementById('counterSetNote').value = state.counter.note || '';
+  openModal('counterModal');
+}
+function applyCounterSet() {
+  state.counter.row = parseInt(document.getElementById('counterSetRow').value) || 0;
+  state.counter.goal = parseInt(document.getElementById('counterSetGoal').value) || null;
+  state.counter.note = document.getElementById('counterSetNote').value.trim();
+  save(); renderCounter(); closeModal('counterModal');
+}
+
+// ═══════════════════════════════════════════════════════
+//  PATTERN
+// ═══════════════════════════════════════════════════════
+function loadPatternText() {
+  const lines = document.getElementById('patternTextInput').value.split('\n').map(l=>l.trim()).filter(Boolean);
+  if (!lines.length) { toast('No rows found'); return; }
+  state.pattern.rows = lines; state.pattern.currentRow = 0;
+  save(); renderPattern(); closeModal('patternTextModal'); toast(`Loaded ${lines.length} rows ✓`);
+}
+
+function clearPattern() {
+  if (!confirm('Clear pattern?')) return;
+  state.pattern = { rows:[], currentRow:0, rowNotes:{} };
+  save(); renderPattern();
+}
+
+async function loadPatternPDF(e) {
+  const file = e.target.files[0]; if (!file) return;
+  e.target.value = '';
+  const apiKey = state.apiKey;
+  if (!apiKey) { openApiKeyModal(); toast('Enter your API key first'); return; }
+
+  const container = document.getElementById('patternRows');
+  const setStatus = (msg) => {
+    container.innerHTML = `<div class="ai-loading"><div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div><span style="margin-left:8px;color:var(--text3);font-size:13px;">${msg}</span></div>`;
+  };
+  setStatus('Loading PDF…');
+
+  try {
+    // ── Step 1: render PDF pages to images via PDF.js ──
+    if (typeof pdfjsLib === 'undefined') throw new Error('PDF library not loaded — check internet connection');
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    const arrayBuf = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuf }).promise;
+    const totalPages = pdf.numPages;
+    // Cap at 8 pages to keep image payload manageable
+    const pagesToRead = Math.min(totalPages, 8);
+
+    setStatus(`Rendering ${pagesToRead} page(s)…`);
+    const imageContents = [];
+    for (let i = 1; i <= pagesToRead; i++) {
+      const page = await pdf.getPage(i);
+      const viewport = page.getViewport({ scale: 1.5 }); // readable resolution
+      const canvas = document.createElement('canvas');
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+      const b64 = canvas.toDataURL('image/jpeg', 0.85).split(',')[1];
+      imageContents.push({ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: b64 } });
+      setStatus(`Rendered page ${i} of ${pagesToRead}…`);
+    }
+
+    // ── Step 2: send images to Claude ──
+    setStatus('Reading pattern with Claude…');
+    imageContents.push({
+      type: 'text',
+      text: 'These are pages from a knitting or crochet pattern. Extract ONLY the row-by-row instructions — every row or round that a crafter needs to follow. Output one instruction per line, keeping the row/round label (e.g. "Row 1: K2, P2 to end" or "Round 3: sc in each st around"). Skip cover pages, materials lists, gauge info, and any text that is not a row instruction. Output plain text only, no markdown, no bullet points, no extra commentary.'
+    });
+
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-request-proxy': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-opus-4-5',
+        max_tokens: 4096,
+        messages: [{ role: 'user', content: imageContents }]
+      })
+    });
+
+    // Check for CORS / network error
+    if (!resp.ok) {
+      const errData = await resp.json().catch(() => ({}));
+      // If CORS blocked, guide user to the workaround
+      throw new Error(errData.error?.message || `API error ${resp.status}`);
+    }
+
+    const data = await resp.json();
+    if (data.error) throw new Error(data.error.message);
+
+    const text = (data.content || []).map(b => b.text || '').join('\n');
+    const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+
+    if (!lines.length) throw new Error('No pattern rows found in this PDF — try the manual text entry instead');
+
+    state.pattern.rows = lines;
+    state.pattern.currentRow = 0;
+    save(); renderPattern();
+    toast(`✓ Loaded ${lines.length} rows from PDF`);
+
+  } catch(err) {
+    const isCors = err.message.includes('Failed to fetch') || err.message.includes('NetworkError') || err.message.includes('CORS');
+    container.innerHTML = `
+      <div style="background:#fff0f0;border:1px solid #f5c6c6;border-radius:10px;padding:16px;font-size:13px;line-height:1.7;">
+        <strong style="color:var(--danger);">⚠️ ${isCors ? 'Connection blocked' : 'Error'}</strong><br>
+        ${isCors
+          ? `Your browser is blocking the request to Anthropic's API for security reasons.<br><br>
+             <strong>Workaround:</strong> Copy the text from your PDF and use the <strong>✏ Text</strong> button to paste it in manually. This works just as well!`
+          : esc(err.message)
+        }
+      </div>`;
+  }
+}
+
+let _editRowNoteIdx = null;
+function openRowNoteModal(idx) {
+  _editRowNoteIdx = idx;
+  document.getElementById('rowNoteTitle').textContent = `Note — Row ${idx+1}`;
+  document.getElementById('rowNoteText').value = (state.pattern.rowNotes||{})[idx] || '';
+  openModal('rowNoteModal');
+}
+function saveRowNote() {
+  if (!state.pattern.rowNotes) state.pattern.rowNotes = {};
+  const txt = document.getElementById('rowNoteText').value.trim();
+  if (txt) state.pattern.rowNotes[_editRowNoteIdx] = txt;
+  else delete state.pattern.rowNotes[_editRowNoteIdx];
+  save(); renderPattern(); closeModal('rowNoteModal');
+}
+function setCurrentRow(idx) {
+  state.pattern.currentRow = idx; save(); renderPattern();
+}
+
+function renderPattern() {
+  const container = document.getElementById('patternRows');
+  if (!state.pattern.rows.length) {
+    container.innerHTML = `<div class="pattern-upload-area" onclick="openModal('patternTextModal')">
+      <div style="font-size:36px;margin-bottom:8px;">📄</div>
+      <div style="font-weight:600;margin-bottom:4px;">No pattern loaded</div>
+      <div style="font-size:13px;color:var(--text3)">Tap to enter rows · or use PDF button above</div>
+    </div>`;
+    return;
+  }
+  const notes = state.pattern.rowNotes || {};
+  container.innerHTML = state.pattern.rows.map((row,i) => {
+    const cur = i === state.pattern.currentRow;
+    return `<div class="pattern-row ${cur?'current':''}" onclick="setCurrentRow(${i})">
+      <div class="pattern-row-num">${i+1}</div>
+      <div style="flex:1">
+        <div class="pattern-row-text">${esc(row)}</div>
+        ${notes[i]?`<div class="pattern-row-note">📌 ${esc(notes[i])}</div>`:''}
+      </div>
+      ${cur?'<span style="font-size:14px;flex-shrink:0;">▶</span>':''}
+      <div class="pattern-row-actions" onclick="event.stopPropagation()">
+        <button class="btn-icon" onclick="openRowNoteModal(${i})">📝</button>
+      </div>
+    </div>`;
+  }).join('');
+  const curEl = container.querySelector('.pattern-row.current');
+  if (curEl) curEl.scrollIntoView({ block:'nearest', behavior:'smooth' });
+}
+
+// ═══════════════════════════════════════════════════════
+//  NOTES
+// ═══════════════════════════════════════════════════════
+let _editNoteId = null;
+
+function openNoteModal(id) {
+  _editNoteId = id || null;
+  document.getElementById('noteModalTitle').textContent = id ? 'Edit Note' : 'New Note';
+  const ns = document.getElementById('noteProject');
+  ns.innerHTML = '<option value="">— None —</option>' + state.projects.map(p => `<option value="${p.id}">${esc(p.name)}</option>`).join('');
+  if (id) {
+    const n = state.notes.find(x => x.id === id); if (!n) return;
+    document.getElementById('noteTitle').value = n.title || '';
+    document.getElementById('noteBody').value = n.body || '';
+    ns.value = n.projectId || '';
+  } else {
+    document.getElementById('noteTitle').value = '';
+    document.getElementById('noteBody').value = '';
+    ns.value = '';
+  }
+  openModal('noteModal');
+}
+function saveNote() {
+  const title = document.getElementById('noteTitle').value.trim();
+  const body = document.getElementById('noteBody').value.trim();
+  if (!body && !title) { toast('Note cannot be empty'); return; }
+  const data = { title, body, projectId: document.getElementById('noteProject').value };
+  if (_editNoteId) {
+    const idx = state.notes.findIndex(x => x.id === _editNoteId);
+    if (idx !== -1) state.notes[idx] = { ...state.notes[idx], ...data, updatedAt: Date.now() };
+    toast('Note updated ✓');
+  } else {
+    state.notes.push({ id: uid(), ...data, createdAt: Date.now() });
+    toast('Note saved ✓');
+  }
+  save(); closeModal('noteModal'); renderNotes();
+}
+function deleteNote(id) {
+  if (!confirm('Delete this note?')) return;
+  state.notes = state.notes.filter(n => n.id !== id);
+  save(); renderNotes(); toast('Deleted');
+}
+function renderNotes() {
+  const grid = document.getElementById('notesGrid');
+  if (!state.notes.length) {
+    grid.innerHTML = `<div class="empty-state"><div class="empty-icon">📝</div><p>Jot down stitch counts, ideas, and reminders.</p></div>`;
+    return;
+  }
+  grid.innerHTML = [...state.notes].reverse().map(n => {
+    const proj = n.projectId ? state.projects.find(p => p.id === n.projectId) : null;
+    const date = new Date(n.updatedAt||n.createdAt).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+    return `<div class="note-card">
+      <div class="note-header">
+        <div>${n.title?`<div class="note-title">${esc(n.title)}</div>`:''}<div class="note-date">${date}</div></div>
+        <div class="note-actions">
+          <button class="btn-icon" onclick="openNoteModal('${n.id}')">✏</button>
+          <button class="btn-icon" onclick="deleteNote('${n.id}')">🗑</button>
+        </div>
+      </div>
+      <div class="note-body">${esc(n.body)}</div>
+      ${proj?`<div class="note-tag">📌 ${esc(proj.name)}</div>`:''}
+    </div>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  API KEY
+// ═══════════════════════════════════════════════════════
+function openApiKeyModal() {
+  const inp = document.getElementById('apiKeyInput');
+  inp.value = '';
+  const statusEl = document.getElementById('currentKeyStatus');
+  if (statusEl) statusEl.textContent = state.apiKey ? '✓ A key is already saved — paste a new one to replace it' : '';
+  openModal('apiKeyModal');
+}
+
+function saveApiKey() {
+  const val = document.getElementById('apiKeyInput').value.trim();
+  if (!val) { toast('Please paste your API key'); return; }
+  state.apiKey = val;
+  save(); closeModal('apiKeyModal');
+  updateApiKeyStatus();
+  toast('API key saved ✓');
+}
+
+function updateApiKeyStatus() {
+  const statusEl = document.getElementById('apiKeyStatus');
+  const hintEl   = document.getElementById('patternApiHint');
+  const pdfBtn   = document.querySelector('#tab-pattern .btn-secondary');
+  if (!statusEl) return;
+  if (state.apiKey) {
+    statusEl.textContent = '✓ Key saved';
+    statusEl.style.color = '#4a8a6f';
+    if (hintEl) hintEl.style.display = 'none';
+  } else {
+    statusEl.textContent = '';
+    if (hintEl) hintEl.style.display = 'block';
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+//  BARCODE SCANNER
+// ═══════════════════════════════════════════════════════
+let _codeReader = null;
+
+async function openScanner() {
+  openModal('scannerModal');
+  const video = document.getElementById('scanner-video');
+  const status = document.getElementById('scannerStatus');
+  status.innerHTML = 'Requesting camera…';
+
+  if (typeof ZXing === 'undefined') {
+    status.textContent = 'Scanner not loaded — check your internet connection and reload.';
+    return;
+  }
+
+  // Step 1: ask for camera permission via getUserMedia
+  // This is required on iOS before any camera APIs work
+  let stream;
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: { ideal: 'environment' }, width: { ideal: 1280 } }
+    });
+  } catch(permErr) {
+    status.innerHTML = '❌ Camera blocked.<br><small style="color:var(--text3)">Go to Settings → Safari → Camera → Allow, then try again.</small>';
+    return;
+  }
+
+  // Step 2: show the live stream directly in the video element
+  video.srcObject = stream;
+  video.style.display = 'block';
+  status.textContent = '📷 Point at barcode…';
+
+  // Step 3: use ZXing to decode from the already-running stream
+  // We decode from the video element itself (not via decodeFromVideoDevice)
+  // This avoids the listVideoInputDevices compatibility issue entirely
+  _codeReader = new ZXing.BrowserMultiFormatReader();
+
+  const hints = new Map();
+  hints.set(ZXing.DecodeHintType.TRY_HARDER, true);
+
+  let scanning = true;
+
+  async function scanLoop() {
+    if (!scanning) return;
+    try {
+      if (video.readyState >= 2) {
+        const result = await _codeReader.decodeFromVideoElement(video);
+        if (result && scanning) {
+          scanning = false;
+          const code = result.getText();
+          // stop the stream
+          stream.getTracks().forEach(t => t.stop());
+          closeScanner();
+          document.getElementById('yarnBarcode').value = code;
+          document.getElementById('barcodeDisplay').textContent = code;
+          lookupUPC(code);
+          return;
+        }
+      }
+    } catch(e) {
+      // NotFoundException is normal — just means no barcode in frame yet
+    }
+    if (scanning) requestAnimationFrame(scanLoop);
+  }
+
+  video.addEventListener('loadeddata', () => { if (scanning) scanLoop(); }, { once: true });
+  // fallback if loadeddata already fired
+  if (video.readyState >= 2 && scanning) scanLoop();
+
+  // store stream reference for cleanup
+  _codeReader._stream = stream;
+}
+
+function closeScanner() {
+  if (_codeReader) {
+    try {
+      if (_codeReader._stream) {
+        _codeReader._stream.getTracks().forEach(t => t.stop());
+      }
+      _codeReader.reset();
+    } catch(e) {}
+    _codeReader = null;
+  }
+  const video = document.getElementById('scanner-video');
+  if (video) { video.srcObject = null; video.style.display = 'none'; }
+  closeModal('scannerModal');
+}
+
+async function lookupUPC(code) {
+  toast('Looking up barcode…');
+  try {
+    const r = await fetch(`https://api.upcitemdb.com/prod/trial/lookup?upc=${code}`);
+    const data = await r.json();
+    const item = data.items?.[0];
+    if (item) {
+      if (item.title && !document.getElementById('yarnName').value) document.getElementById('yarnName').value = item.title;
+      if (item.brand && !document.getElementById('yarnBrand').value) document.getElementById('yarnBrand').value = item.brand;
+      toast('Yarn info auto-filled ✓');
+    } else { toast('No product found — fill in manually'); }
+  } catch(e) { toast('Lookup failed — fill in manually'); }
+  openYarnModal();
+}
+
+// ═══════════════════════════════════════════════════════
+//  EXPORT / IMPORT
+// ═══════════════════════════════════════════════════════
+function openExport() {
+  const exportData = { ...state }; delete exportData.apiKey;
+  const blob = new Blob([JSON.stringify(exportData,null,2)], { type:'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url;
+  a.download = `craft-backup-${new Date().toISOString().slice(0,10)}.json`;
+  a.click(); URL.revokeObjectURL(url);
+  toast('Backup downloaded ✓');
+}
+
+function importData(e) {
+  const file = e.target.files[0]; if (!file) return;
+  const r = new FileReader();
+  r.onload = ev => {
+    try {
+      const imported = JSON.parse(ev.target.result);
+      if (!confirm('Replace all data with this backup?')) return;
+      const key = state.apiKey;
+      state = { ...state, ...imported, apiKey: key };
+      save(); renderAll(); toast('Data imported ✓');
+    } catch(err) { toast('Import failed: invalid file'); }
+  };
+  r.readAsText(file); e.target.value = '';
+}
+
+// ═══════════════════════════════════════════════════════
+//  KEYBOARD SHORTCUT: swipe hint (visual only)
+// ═══════════════════════════════════════════════════════
+// Save before page unload (belt & braces)
+window.addEventListener('beforeunload', () => save());
+window.addEventListener('pagehide', () => save());
+</script>
+</body>
+</html>
